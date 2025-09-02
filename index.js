@@ -24,13 +24,14 @@ client.once("ready", () => {
 client.on("messageCreate", (message) => {
   if (!message.author.bot) {
     console.log(`📩 Mensagem recebida de ${message.author.tag}: ${message.content}`);
-    latestMessage = message.content;
+    latestMessage = `${message.author.tag}: ${message.content}`; // concatena usuário + mensagem
   }
 });
 
 app.get("/latest-message", (req, res) => {
   res.json({ message: latestMessage });
 });
+
 
 client.login(TOKEN);
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
