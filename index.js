@@ -17,7 +17,7 @@ const client = new Client({
 let latestMessage = "Nenhuma mensagem";
 
 // ID do canal "geral"
-const GENERAL_CHANNEL_ID = "1179094933043421187";
+const GENERAL_CHANNEL_ID = "1412558974997495859";
 
 client.once("ready", () => {
   console.log(`✅ Bot conectado como ${client.user.tag}`);
