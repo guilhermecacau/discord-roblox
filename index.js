@@ -27,8 +27,8 @@ client.on("messageCreate", (message) => {
   // Ignora mensagens de bots
   if (message.author.bot) return;
 
-  // Ignora mensagens de outros canais
-  if (message.channel.id !== GENERAL_CHANNEL_ID) return;
+  // Garante que é um canal de texto e só do canal desejado
+  if (!message.channel.isTextBased() || message.channel.id !== GENERAL_CHANNEL_ID) return;
 
   // Concatena usuário + mensagem
   latestMessage = `${message.author.tag}: ${message.content}`;
